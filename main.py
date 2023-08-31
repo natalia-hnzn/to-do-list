@@ -62,6 +62,10 @@ class AppListaTarefas(QWidget):
         if item_selecionado:
             item_selecionado.setFlags(item_selecionado.flags() | Qt.ItemIsUserCheckable)
             item_selecionado.setCheckState(Qt.Checked)
+            item_selecionado.setFlags(~ Qt.ItemIsSelectable)
+            item_selecionado.setFlags(~ Qt.ItemIsEnable)
+
+        # Operador de bit wise AND &, OR |, XOR ^, NOT ~
 
     def remover_tarefa(self):
         item_selecionado = self.lst_tarefa.currentItem()
